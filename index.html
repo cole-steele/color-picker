@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Scheme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <input type="color" id="pick-color" name="baseColor" value="#FFFFFF">
+        <select id="scheme-type" name="scheme-type">
+            <option value="Monochrome">Monochrome</option>
+            <option value="Monochrome-dark">Monochrome-dark</option>
+            <option value="Monochrome-light">Monochrome-light</option>
+            <option value="Analogic">Analogic</option>
+            <option value="Complement">Complement</option>
+            <option value="Analogic-Complement">Analogic-Complement</option>
+            <option value="Triad">Triad</option>
+        </select>
+        <button id="scheme-btn">Get Color Scheme</button>
+    </nav>
+
+    <main class="color-grid">
+        <main class="color-grid">
+            <div class="pair">
+                <div class="color-div" style="background: #FF6B6B;"></div>
+                <div class="color-hex">#FF6B6B</div>
+            </div>
+            <div class="pair">
+                <div class="color-div" style="background: #FFD93D;"></div>
+                <div class="color-hex">#FFD93D</div>
+            </div>
+            <div class="pair">
+                <div class="color-div" style="background: #6BCB77;"></div>
+                <div class="color-hex">#6BCB77</div>
+            </div>
+            <div class="pair">
+                <div class="color-div" style="background: #4D96FF;"></div>
+                <div class="color-hex">#4D96FF</div>
+            </div>
+            <div class="pair">
+                <div class="color-div" style="background: #E96479;"></div>
+                <div class="color-hex">#E96479</div>
+            </div>
+        </main>
+
+    </main>
+
+</body>
+
+</html>
