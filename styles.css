@@ -50,7 +50,8 @@ nav {
 }
 
 #scheme-btn {
-    font-size: .6em;
+    font-size: .7em;
+    padding: 0 .75rem;
 }
 
 #scheme-type {
