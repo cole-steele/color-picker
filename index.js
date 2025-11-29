@@ -97,13 +97,25 @@ function addClickCopy(colorDiv, hex, colorHex) {
     colorDiv.addEventListener("click", () => {
         navigator.clipboard.writeText(hex)
             .then(() => {
-                const originalText = colorHex.textContent;
-                colorHex.textContent = `${hex} (copied!)`;
-                setTimeout(() => colorHex.textContent = originalText, 1500)
+                const tooltip = document.createElement("span");
+                tooltip.classList.add("copy-tooltip");
+                tooltip.textContent = "Copied!";
+                colorDiv.appendChild(tooltip);
+
+                setTimeout(() => {
+                    tooltip.style.opacity = "1";
+                }, 10);
+
+                setTimeout(() => {
+                    tooltip.style.opacity = "0";
+                    setTimeout(() => tooltip.remove(), 300);
+                }, 1000);
             })
             .catch(err => console.error("Failed to copy:", err));
     });
 }
+
+
 
 
 function showCopyCsvButton(colors) {
