@@ -8,50 +8,41 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <nav>
-        <input type="color" id="pick-color" name="baseColor" value="#FFFFFF">
-        <select id="scheme-type" name="scheme-type">
-            <option value="monochrome">Monochrome</option>
-            <option value="monochrome-dark">Monochrome-dark</option>
-            <option value="monochrome-light">Monochrome-light</option>
-            <option value="analogic">Analogic</option>
-            <option value="complement">Complement</option>
-            <option value="analogic-Complement">Analogic-Complement</option>
-            <option value="triad">Triad</option>
-        </select>
-        <button id="scheme-btn">Get Color Scheme</button>
+        <div class="color-inputs">
+            <div class="base-color-div">
+                <h2>Base Color:</h2>
+                <input type="color" id="pick-color" name="baseColor" value="#8cb8ed">
+            </div>
+            <div class="color-number-div">
+                <h2>Swatches:</h2>
+                <input type="number" id="color-number" name="color-number" min="1" max="20" value="5" step="1">
+            </div>
+        </div>
+        <div class="color-submit-div">
+            <select id="scheme-type" name="scheme-type">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-Complement</option>
+                <option value="triad">Triad</option>
+            </select>
+            <button id="scheme-btn">Get Color Scheme</button>
+        </div>
     </nav>
 
-    <main class="color-grid">
-        <main class="color-grid">
-            <div class="pair">
-                <div class="color-div" style="background: #FF6B6B;"></div>
-                <div class="color-hex">#FF6B6B</div>
-            </div>
-            <div class="pair">
-                <div class="color-div" style="background: #FFD93D;"></div>
-                <div class="color-hex">#FFD93D</div>
-            </div>
-            <div class="pair">
-                <div class="color-div" style="background: #6BCB77;"></div>
-                <div class="color-hex">#6BCB77</div>
-            </div>
-            <div class="pair">
-                <div class="color-div" style="background: #4D96FF;"></div>
-                <div class="color-hex">#4D96FF</div>
-            </div>
-            <div class="pair">
-                <div class="color-div" style="background: #E96479;"></div>
-                <div class="color-hex">#E96479</div>
-            </div>
-        </main>
-
+    <main id="color-grid">
+        <!-- Color columns are inserted here-->
     </main>
-
+    <button id="copy-csv-btn" style="display:none;">Copy All as CSV</button>
     <script src="index.js"></script>
 </body>
 

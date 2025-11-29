@@ -1,28 +1,27 @@
-* {
-    margin: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
-
 
 htmL,
 body {
     font-family: 'Inter', sans-serif;
-    height: 100%;
     background: #FFFFFF;
+    height: 100%;
 }
 
 body {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    width: 100%;
-    max-width: 500px;
+    font-family: 'Inter', sans-serif;
 }
 
 nav {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
@@ -31,13 +30,89 @@ nav {
     overflow: visible;
 }
 
+.color-inputs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    box-sizing: border-box;
+}
+
+.base-color-div,
+.color-number-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+h2 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin: 0;
+}
+
 #pick-color {
+    -webkit-appearance: none;  
+    -moz-appearance: none;     
+    appearance: none;          
+
     height: 42px;
-    width: 61px;
+    min-width: 61px;
+    max-width: 400px;
+    padding: 0;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    background: none;           
+    cursor: pointer;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+#pick-color:hover {
+    border-color: black;
+    border: 1px solid black;
+}
+
+#pick-color::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border-radius: 5px;
+}
+
+#pick-color::-webkit-color-swatch {
+    border: none;
+    border-radius: 5px;
+}
+
+#color-number {
+    width: 4rem;
+    padding: 0.5rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    height: 42px;
+    transition: all 0.3s ease;
 }
 
 
-#scheme-btn, #scheme-type {
+#color-number:focus {
+    outline: none;
+    border-color: black;
+}
+
+#color-number:hover {
+    outline: none;
+    border-color: black;
+}
+
+#scheme-btn,
+#scheme-type {
+    box-sizing: border-box;
+    cursor: pointer;
     font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
@@ -47,10 +122,25 @@ nav {
     background: none;
     padding: 1rem;
     height: 3rem;
+    transition: all 0.3s ease;
+}
+
+#scheme-btn:hover,
+#scheme-type:hover {
+    border-color: black;
+    transition: all .3s ease;
+}
+
+.color-submit-div {
+    display: flex;
+    flex-direction: row;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
 }
 
 #scheme-btn {
-    font-size: .7em;
+    font-size: .8em;
     padding: 0 .75rem;
 }
 
@@ -67,29 +157,65 @@ nav {
     padding: 0 1rem;
 }
 
-.color-grid {
-    flex: 1;
+#color-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-auto-rows: 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex: 1;
+    min-height: 0;
 }
 
 .pair {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
 }
 
 .color-div {
     flex: 1;
+    width: 100%;
+    border-radius: 4px;
     box-shadow: 0 2px 4px #00000033;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
 }
 
+.color-div.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.color-div:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.005);
+    transition: all 0.2s ease;
+}
+
+
 .color-hex {
-    color: #2b283a;
-    font-size: .9em;
-    margin-top: 0.5rem;
+    padding: 0.5rem 0;
     text-align: center;
-    padding: 1.5rem;
+    margin-top: 0.25rem;
+    font-size: .90rem;
+}
+
+#copy-csv-btn {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    padding: 0.75rem;
+    display: block;
+    font-size: 1rem;
+    border-top: 1px solid #D1D5DB;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#copy-csv-btn:hover {
+    background: #f0f0f0;
+    border-color: black;
 }
