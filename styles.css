@@ -21,13 +21,19 @@ body {
 nav {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; 
     align-items: center;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1rem 1rem;
     background-color: white;
-    box-shadow: 0 4px 6px -2px rgba(0, 0, 0, 0.33);
-    overflow: visible;
+    overflow-x: auto; 
+    overflow-y: auto; 
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+nav::-webkit-scrollbar {
+    display: none;
 }
 
 .color-inputs {
