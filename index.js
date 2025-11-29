@@ -3,6 +3,7 @@ colorNumber = document.getElementById("color-number");
 dropdownMenu = document.getElementById("scheme-type");
 submitButton = document.getElementById("scheme-btn")
 
+submitTheme();
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
